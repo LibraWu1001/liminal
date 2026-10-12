@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="chat-room-page">
+
+  <div class="chat-container">
+
+    <!-- ROOM TITLE -->
+    <h1 id="roomTitle">Chat Room</h1>
+
+    <!-- CHAT BOX -->
+    <div id="chatBox" class="chat-box"></div>
+
+    <!-- INPUT AREA -->
+    <div class="message-area">
+
+      <!-- TEXT INPUT -->
+      <input
+        type="text"
+        id="messageInput"
+        placeholder="Type your message..."
+      >
+
+      <!-- EMOJI -->
+      <div class="emoji-wrapper">
+
+        <button class="circle-btn" onclick="toggleEmojiPanel()">
+          😊
+        </button>
+
+       <div class="emoji-panel" id="emojiPanel">
+       <input
+        type="text"
+        id="emojiSearch"
+        placeholder="Search emoji"
+        oninput="searchEmoji()">
+
+  <div id="emojiResults" class="emoji-results"></div>
+</div>
+        <div id="onlineMusicPanel" class="online-music-panel" style="display: none;">
+        <input type="text" id="musicSearch" placeholder="Search music">
+        <button type="button" onclick="loadOnlineMusic()">Search</button>
+        <div id="musicResults" class="music-results"></div>
+        </div>
+
+      </div>
+
+      <!-- PLUS -->
+      <div class="plus-wrapper">
+
+        <button class="circle-btn" onclick="toggleAttachMenu()">
+          +
+        </button>
+
+        <div class="attach-menu" id="attachMenu">
+
+          <label class="attach-item">
+            🖼 Image
+            <input type="file" accept="image/*" hidden onchange="sendImage(event)">
+          </label>
+
+          <label class="attach-item">
+            🎵 Music
+            <input type="file" accept="audio/*" hidden onchange="sendMusic(event)">
+          </label>
+          <div class="attach-item" onclick="toggleOnlineMusicPanel()">
+            🎧 Online Music
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- SEND BUTTON -->
+      <button onclick="sendMessage()">Send</button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+   
+</body>
+<body class="chat-room-page">
+
+  <button class="home-btn" onclick="goHome()">Home</button>
+</html>

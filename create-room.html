@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Room</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="create-room-page">
+<button class="home-btn" onclick="goHome()">Home</button>
+
+  <div class="room-box">
+    <h1>Create Room</h1>
+
+    <label>Room Name</label>
+<input type="text" id="roomName" placeholder="Enter room name">
+
+<label>Room Type</label>
+<div class="select-wrap custom-select-wrap">
+  <select id="roomType" class="real-select">
+    <option value="Game">Game</option>
+    <option value="Music">Music</option>
+    <option value="Reading">Reading</option>
+    <option value="Movie">Movie</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <div class="custom-select-trigger" tabindex="0">
+    <span>Game</span>
+  </div>
+
+  <div class="custom-select-menu">
+    <div class="custom-select-option selected" data-value="Game">Game</div>
+    <div class="custom-select-option" data-value="Music">Music</div>
+    <div class="custom-select-option" data-value="Reading">Reading</div>
+    <div class="custom-select-option" data-value="Movie">Movie</div>
+    <div class="custom-select-option" data-value="Other">Other</div>
+  </div>
+</div>
+
+
+    <label>Background Type</label>
+<div class="select-wrap custom-select-wrap">
+  <select id="backgroundType" class="real-select">
+    <option value="color">Solid Colour</option>
+    <option value="image">Upload Photo</option>
+    <option value="online">Online Gallery</option>
+  </select>
+
+  <div class="custom-select-trigger" tabindex="0">
+    <span>Solid Colour</span>
+  </div>
+
+  <div class="custom-select-menu">
+    <div class="custom-select-option selected" data-value="color">Solid Colour</div>
+    <div class="custom-select-option" data-value="image">Upload Photo</div>
+    <div class="custom-select-option" data-value="online">Online Gallery</div>
+  </div>
+</div>
+
+
+    <div id="colorOption">
+  <label>Choose Colour</label>
+    <div class="color-row">
+  <label for="bgColor" id="colorText">#c9b7ff</label>
+  <input type="color" id="bgColor" value="#c9b7ff" oninput="updateColorPreview()">
+</div>
+</div>
+
+    <div id="imageOption" style="display: none;">
+  <label>Upload Background Photo</label>
+
+  <label class="file-upload-box" for="bgImage">
+    <span id="fileName">Choose background photo</span>
+  </label>
+
+  <input type="file" id="bgImage" accept="image/*" onchange="updateFileName()">
+</div>
+
+<div id="onlineOption" style="display: none;">
+  <label>Online Gallery</label>
+
+  <div class="gallery-search">
+    <input type="text" id="onlineSearch" placeholder="Search backgrounds">
+    <button type="button" onclick="loadOnlinePhotos()">Search</button>
+  </div>
+
+  <div id="onlineGallery" class="online-gallery"></div>
+</div>
+
+
+    <button onclick="createRoom()">Create Room</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
